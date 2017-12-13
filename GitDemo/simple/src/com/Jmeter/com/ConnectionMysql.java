@@ -14,8 +14,9 @@ public class ConnectionMysql {
 	 * 4.建立数据库连接，获得连接对象conn(抛出异常即可)
 	 * @param args
 	 */
-
+	
 	public static void main(String[] args) {
+		Connection connection;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");// 加载数据库驱动
 			System.out.println("加载数据库驱动成功");
@@ -23,7 +24,7 @@ public class ConnectionMysql {
 			String user = "cosori";// 数据库的用户名
 			String password = "cosori@EC#1221";// 数据库的密码
 			// 建立数据库连接，获得连接对象conn(抛出异常即可)
-			Connection conn = DriverManager.getConnection(url, user, password);
+			connection = DriverManager.getConnection(url, user, password);
 			System.out.println("连接数据库成功");
 			// 生成一条mysql语句
 			String sql = "INSERT INTO cutprice (`email`,`cutNum`,`status`,`confirmCode`,created_at,updated_at) VALUE ";
@@ -35,10 +36,10 @@ public class ConnectionMysql {
 			}
 			sql = sql.substring(0, sql.length() - 1);
 
-			Statement stmt = conn.createStatement();// 创建一个Statement对象
+			Statement stmt = connection.createStatement();// 创建一个Statement对象
 			stmt.executeUpdate(sql);// 执行sql语句
 			System.out.println("插入到数据库成功");
-			conn.close();
+			connection.close();
 			System.out.println("关闭数据库成功");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -46,7 +47,6 @@ public class ConnectionMysql {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-
+		} 
 	}
 }

@@ -1,6 +1,5 @@
 package com.Chapter11.com;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -18,9 +17,12 @@ public class Example_07 {
 			try {
 				fileReader = new FileReader(".src/com/Chapter11/com/Example_07.java");
 				System.out.println("找到文件成功！创建IO对象成功！");
-			} catch (FileNotFoundException e) {
+			} catch (Exception e) {
 				// 抛出IO流异常
 				e.getMessage();
+				e.printStackTrace();
+				e.getLocalizedMessage();
+				e.toString();
 				System.out.println("找到文件失败！");
 			}
 		} finally {

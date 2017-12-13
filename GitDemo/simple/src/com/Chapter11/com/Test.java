@@ -1,10 +1,24 @@
 package com.Chapter11.com;
 
-public class Test {
+import java.io.FileInputStream;
 
+public class Test {
+	/**
+	 * 
+	 * @param args
+	 */
+	public void showInfo() throws Exception{
+		FileInputStream fileInputStream = new FileInputStream("");
+	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("hahaha");
+		// test
+		Test test = new Test();
+		try {
+			test.showInfo();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
