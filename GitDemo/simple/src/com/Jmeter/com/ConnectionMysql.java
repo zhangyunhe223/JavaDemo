@@ -31,7 +31,7 @@ public class ConnectionMysql {
 			for (int i = 1; i <= 1; i++) {
 				// 'zhangyunhe3@qq.com',3,2,34324234324,'2017-10-07 01:29:21','2017-11-07 01:29:21'
 				sql = sql
-						+ "('zhangyunhe01@qq.com',1,3,34324234324,FROM_UNIXTIME(UNIX_TIMESTAMP()),FROM_UNIXTIME(UNIX_TIMESTAMP())),";
+						+ "('zhangyunhe3@qq.com',3,2,34324234324,'2017-10-07 01:29:21','2017-11-07 01:29:21'),";
 			}
 			sql = sql.substring(0, sql.length() - 1);
 
@@ -43,8 +43,7 @@ public class ConnectionMysql {
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} //
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

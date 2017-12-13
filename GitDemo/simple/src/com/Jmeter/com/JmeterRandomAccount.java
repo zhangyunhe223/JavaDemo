@@ -9,6 +9,7 @@ public class JmeterRandomAccount {
 		/*
 		 * 逐行写文本到文件中
 		 */
+		// 这也是换行符,功能和"\n"是一致的
 		String str = System.getProperty("line.separator");
 			try {
 				FileWriter fw = new FileWriter("D:\\scriptTest\\register.txt");
